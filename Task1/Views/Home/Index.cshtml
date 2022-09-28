@@ -1,8 +1,34 @@
-﻿@{
+﻿@model Value<double>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div style="border:3px solid yellow; margin:50px 0 0 30px; display:flex; flex-direction:column;">
+    <form method="post">
+        <div style="margin: 20px">
+             <label asp-for="Value1">Value 1:</label>
+             <input type="text" asp-for="Value1"/> <br /> <br />
+
+             <label asp-for="Value2">Value 2:</label>
+             <input type="text" asp-for="Value2" /><br /> <br />
+        </div>
+
+       <div style="margin: 20px">
+         <input type="submit" asp-controller="Calculator" asp-action="Add" value="Add" style="margin-right: 10px; background-color:greenyellow; width:80px; border-radius:10px;"/>
+         <input type="submit" asp-controller="Calculator" asp-action="Sub" value="Sub" style="margin-right: 10px; background-color:aqua; width:80px; border-radius:10px;" />
+         <input type="submit" asp-controller="Calculator" asp-action="Div" value="Div" style="margin-right: 10px; background-color:hotpink; width:80px; border-radius:10px;"/>
+         <input type="submit" asp-controller="Calculator" asp-action="Mul" value="Mul" style="background-color:orange; width:80px; border-radius:10px;"/>
+        </div>
+    </form>
+
+        <div>
+             <div style="display:flex; flex-direction:row; justify-content:center; margin-top:40px;">
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                    <p style="font-size:25px; font-weight:bold; color:blue;">Arithmetic operation</p>
+                    <p style="font-size:30px; font-weight:bold; color:green; margin:20px 0 30px 0;">@ViewBag.id</p>
+                 </div>
+             </div>
+        </div>
+
 </div>
