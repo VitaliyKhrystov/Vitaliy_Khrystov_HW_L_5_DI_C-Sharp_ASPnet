@@ -1,0 +1,12 @@
+﻿@model MonthInfo
+@{
+
+}
+
+
+<div>
+    @foreach (var month in Model.GetMonthInfo())
+    {
+                <p>@month</p>
+    }
+</div>

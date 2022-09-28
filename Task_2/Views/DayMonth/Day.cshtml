@@ -1,0 +1,12 @@
+﻿@model DayInfo
+@{
+
+}
+
+
+<div>
+    @foreach (var day in Model.GetDaysInfo())
+    {
+            <p>@day</p>
+    }
+</div>
